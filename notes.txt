@@ -1,0 +1,53 @@
+App Name:
+AutoMuse AI
+
+Problem:
+Automotive and transport design students often experience creative blocks and struggle to develop complete vehicle concepts during the early stages of the design process.
+
+Target Users:
+- Automotive Design Students
+- Transport Design Students
+- Concept Artists
+- Car Enthusiasts
+
+Features:
+- AI Vehicle Concept Generator
+- Vehicle Name Generator
+- Color Palette Suggestions
+- Automotive Design Assistant
+- Aerodynamics Suggestions
+- Vehicle Structure Recommendations
+- Design Language Analysis
+- Sketch Feedback/Checker
+- Interior Design Suggestions
+- Exterior Styling Suggestions
+- Future Mobility Ideas
+- Materials Recommendations
+- Mood Board Inspiration
+- Vehicle Segment Suggestions (SUV, Sedan, Hypercar, etc.)
+- Sustainability Recommendations
+- Design Description Generator
+
+Possible AI Inputs:
+- Vehicle Type
+- Year
+- Style (Cyberpunk, Luxury, Retro, Futuristic)
+- Brand Inspiration
+- Target Audience
+- Country/Market
+
+Example Output:
+"The Aether GT is a 2075 electric hypercar featuring active aerodynamic panels, a carbon-fiber monocoque structure, adaptive LED lighting, and a minimalist cockpit inspired by aerospace design."
+
+Tools:
+- GitHub
+- GitHub Desktop
+- Vercel
+- AI App Builder
+- OpenAI API 
+
+Future Ideas:
+- Upload sketches for AI feedback.
+- Save generated concepts.
+- Download concept sheets as PDFs.
+- Generate AI mood boards.
