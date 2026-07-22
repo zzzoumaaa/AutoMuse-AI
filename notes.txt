@@ -2,52 +2,150 @@ App Name:
 AutoMuse AI
 
 Problem:
-Automotive and transport design students often experience creative blocks and struggle to develop complete vehicle concepts during the early stages of the design process.
+
+Automotive and transport design students often experience creative blocks and struggle to develop complete vehicle concepts during the early stages of the design process. AutoMuse AI helps users generate innovative automotive design ideas and organize their concepts in one place.
 
 Target Users:
-- Automotive Design Students
-- Transport Design Students
-- Concept Artists
-- Car Enthusiasts
+
+* Automotive Design Students
+* Transport Design Students
+* Concept Artists
+* Car Enthusiasts
 
 Features:
-- AI Vehicle Concept Generator
-- Vehicle Name Generator
-- Color Palette Suggestions
-- Automotive Design Assistant
-- Aerodynamics Suggestions
-- Vehicle Structure Recommendations
-- Design Language Analysis
-- Sketch Feedback/Checker
-- Interior Design Suggestions
-- Exterior Styling Suggestions
-- Future Mobility Ideas
-- Materials Recommendations
-- Mood Board Inspiration
-- Vehicle Segment Suggestions (SUV, Sedan, Hypercar, etc.)
-- Sustainability Recommendations
-- Design Description Generator
+
+* AI Vehicle Concept Generator
+* Vehicle Name Generator
+* Color Palette Suggestions
+* Automotive Design Assistant
+* Aerodynamics Suggestions
+* Vehicle Structure Recommendations
+* Interior Design Suggestions
+* Exterior Styling Suggestions
+* Materials Recommendations
+* Sustainability Recommendations
+* Design Description Generator
 
 Possible AI Inputs:
-- Vehicle Type
-- Year
-- Style (Cyberpunk, Luxury, Retro, Futuristic)
-- Brand Inspiration
-- Target Audience
-- Country/Market
+
+* Vehicle Type
+* Year
+* Style (Cyberpunk, Luxury, Retro, Futuristic)
+* Brand Inspiration
+* Target Audience
+* Country/Market
 
 Example Output:
+
 "The Aether GT is a 2075 electric hypercar featuring active aerodynamic panels, a carbon-fiber monocoque structure, adaptive LED lighting, and a minimalist cockpit inspired by aerospace design."
 
-Tools:
-- GitHub
-- GitHub Desktop
-- Vercel
-- AI App Builder
-- OpenAI API 
+App Flow:
 
-Future Ideas:
-- Upload sketches for AI feedback.
-- Save generated concepts.
-- Download concept sheets as PDFs.
-- Generate AI mood boards.
+HOME PAGE
+
+↓
+
+User enters vehicle details:
+
+* Vehicle Type
+* Year
+* Style
+* Brand Inspiration
+* Target Audience
+* Country/Market
+
+↓
+
+AutoMuse AI generates:
+
+* Vehicle Name
+* Vehicle Concept
+* Design Language
+* Exterior Styling Suggestions
+* Interior Styling Suggestions
+* Materials Recommendations
+* Aerodynamics Suggestions
+* Vehicle Structure Recommendations
+* Sustainability Suggestions
+* Color Palette Suggestions
+* Professional Design Description
+
+↓
+
+User reviews the generated vehicle concept.
+
+↓
+
+User can generate another automotive concept.
+
+Tools:
+
+* GitHub
+* GitHub Desktop
+* Vercel
+* AI App Builder
+* OpenAI API
+
+
+AUTOMUSE AI SYSTEM PROMPT
+
+You are AutoMuse AI, an automotive design assistant created to help automotive and transport design students develop innovative vehicle concepts.
+
+Your job is to generate creative, realistic, and futuristic automotive design ideas based on the user's inputs.
+
+For every vehicle concept, you must provide:
+
+- Vehicle Name
+- Vehicle Concept Summary
+- Design Language
+- Exterior Styling Suggestions
+- Interior Styling Suggestions
+- Color Palette Suggestions
+- Materials Recommendations
+- Aerodynamics Suggestions
+- Vehicle Structure Recommendations
+- Sustainability Recommendations
+- Professional Design Description
+
+The output should be professional, creative, and suitable for automotive concept design projects and student portfolios.
+
+Keep the responses easy to understand and visually organized.
+
+
+HOME PAGE LAYOUT
+
+Title:
+AutoMuse AI
+
+Subtitle:
+Design Your Dream Vehicle
+
+
+User Inputs:
+
+- Vehicle Type
+- Year
+- Design Style
+- Brand Inspiration
+- Target Audience
+- Country / Market
+
+
+Button:
+
+- Generate Concept
+
+
+AI Output:
+
+- Vehicle Name
+- Vehicle Concept Summary
+- Design Language
+- Exterior Styling Suggestions
+- Interior Styling Suggestions
+- Color Palette Suggestions
+- Materials Recommendations
+- Aerodynamics Suggestions
+- Vehicle Structure Recommendations
+- Sustainability Recommendations
+- Professional Design Description
