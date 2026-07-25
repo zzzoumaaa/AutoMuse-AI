@@ -1,0 +1,6 @@
+{
+  "name": "AutoMuse AI",
+  "description": "Automotive AI design studio for transport design students, concept artists, and car enthusiasts to generate futuristic concept vehicle reports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

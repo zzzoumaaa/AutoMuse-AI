@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Global Selection Area - Warm Starter Bulb Yellow */
+  ::selection {
+    background-color: #f59e0b !important;
+    color: #000000 !important;
+  }
+
+  ::-moz-selection {
+    background-color: #f59e0b !important;
+    color: #000000 !important;
+  }
+
+  /* Custom Green & Yellow Automotive Studio Scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0f1210;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #25382b;
+    border-radius: 4px;
+    border: 1px solid #385441;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #f59e0b;
+  }
+
+  /* Custom Textarea Green/Yellow Resize Corner */
+  textarea::-webkit-resizer {
+    background: #282110;
+    outline: 1px solid #f59e0b;
+  }
+}
+
+/* Global Form Controls Focus and Selection Override - Starter Bulb Yellow Glow */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.35) !important;
+}
+
+/* Dropdown Option Selection Styling */
+option:checked {
+  background-color: #3f2d0e !important;
+  color: #fef08a !important;
+}
+
+textarea {
+  scrollbar-width: thin;
+  scrollbar-color: #2d4535 #0f1210;
+}
+
+@keyframes dashFlow {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.animate-dash-flow {
+  animation: dashFlow 2.5s linear infinite;
+}
+
