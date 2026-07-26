@@ -55,8 +55,36 @@ Your response must start with { and end with }.
 User Idea:
 ${customPrompt}
 
-Return a detailed automotive concept report.
+Return ONLY valid JSON.
+
+You MUST include every field below:
+
+vehicleName,
+vehicleType,
+designPhilosophy,
+vehicleConceptSummary,
+designLanguage,
+designDna,
+exteriorStylingSuggestions,
+interiorStylingSuggestions,
+colorPaletteSuggestions,
+materialsList,
+materialsRecommendations,
+aerodynamicsSuggestions,
+vehicleStructureRecommendations,
+sustainabilityRecommendations,
+professionalDesignDescription,
+sizeComparison,
+keySpecs,
+aeroStreamlines.
+
+Do not remove any field.
+Do not return explanations outside JSON.
+If you are unsure about a value, create a realistic automotive design value.
+
+Return a complete automotive concept report.
 `;
+
 
     const result = await ai.models.generateContent({
       model: "gemini-3.6-flash",
