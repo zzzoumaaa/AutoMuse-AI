@@ -45,6 +45,12 @@ const finalStyle = (inferred as any).designStyle || designStyle;
 const finalBrand = (inferred as any).brandInspiration || brandInspiration;
 const finalAudience = (inferred as any).targetAudience || targetAudience;
 const finalMarket = (inferred as any).countryMarket || countryMarket;
+IMPORTANT:
+Return ONLY valid JSON 
+Do not use Markdown
+Do not use # headings
+Do not add explanations before or after the JSON
+Your response must start with { and end with }.
 
 User Idea:
 ${customPrompt}
@@ -55,11 +61,14 @@ Return a detailed automotive concept report.
     const result = await ai.models.generateContent({
       model: "gemini-3.6-flash",
       contents: prompt,
+      config: {
+        responseMimeType: "application/JSON",
+      },
     });
 
     res.status(200).json({
       success: true,
-      data:JSON.parse(result.text),
+      data:result.text,
     });
 
   } catch (error: any) {
