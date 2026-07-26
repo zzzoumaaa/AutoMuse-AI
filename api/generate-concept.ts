@@ -1,7 +1,11 @@
 import { GoogleGenAI } from "@google/genai";
-import { inferConceptFromPrompt } from "../src/lib/promptInference";
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-export default async function handler(req, res) {
+
+export default async function handler(
+  req: VercelRequest,
+  res: VercelResponse
+) {
   try {
     const apiKey = process.env.GEMINI_API_KEY;
 
@@ -25,26 +29,22 @@ export default async function handler(req, res) {
       countryMarket = "Global Metropolises",
     } = req.body || {};
 
-    const inferred = inferConceptFromPrompt(customPrompt);
-
-    const finalVehicleType = inferred.vehicleType || vehicleType;
-    const finalYear = inferred.year || year;
-    const finalStyle = inferred.designStyle || designStyle;
-    const finalBrand = inferred.brandInspiration || brandInspiration;
-    const finalAudience = inferred.targetAudience || targetAudience;
-    const finalMarket = inferred.countryMarket || countryMarket;
+    const inferred: any = {};
 
     const prompt = `
+
+  
+
 You are AutoMuse AI, an elite automotive design mentor.
 
 Create a futuristic vehicle concept.
 
-Vehicle Type: ${finalVehicleType}
-Year: ${finalYear}
-Design Style: ${finalStyle}
-Brand Inspiration: ${finalBrand}
-Target Audience: ${finalAudience}
-Market: ${finalMarket}
+const finalVehicleType = (inferred as any).vehicleType || vehicleType;
+const finalYear = (inferred as any).year || year;
+const finalStyle = (inferred as any).designStyle || designStyle;
+const finalBrand = (inferred as any).brandInspiration || brandInspiration;
+const finalAudience = (inferred as any).targetAudience || targetAudience;
+const finalMarket = (inferred as any).countryMarket || countryMarket;
 
 User Idea:
 ${customPrompt}
@@ -62,7 +62,7 @@ Return a detailed automotive concept report.
       concept: result.text,
     });
 
-  } catch (error) {
+  } catch (error: any) {
     console.error(error);
 
     res.status(500).json({
