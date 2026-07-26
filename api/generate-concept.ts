@@ -62,7 +62,7 @@ Return a detailed automotive concept report.
       model: "gemini-3.6-flash",
       contents: prompt,
       config: {
-        responseMimeType: "application/JSON",
+        responseMimeType: "application/json",
       },
     });
 
