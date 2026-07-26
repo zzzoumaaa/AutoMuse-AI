@@ -248,7 +248,9 @@ ${
     : ""
 }
 ### DESIGN DNA
-${report.designDna?.map((d) => `- ${d.attribute}: ${d.percentage}%`).join("\n")}
+${(Array.isArray(report.designDna) ? report.designDna : [])
+.map((d) => `- ${d.attribute}: ${d.percentage}%`)
+.join("\n")}
 
 ### KEY SPECIFICATIONS
 - Top Speed: ${formatTopSpeed(report.keySpecs.topSpeed)}
@@ -269,10 +271,14 @@ ${report.exteriorStylingSuggestions}
 ${report.interiorStylingSuggestions}
 
 ### COLOR PALETTE SUGGESTIONS
-${report.colorPaletteSuggestions.map((c) => `- ${c.name} (${c.hex}): ${c.usage}`).join("\n")}
+${(Array.isArray(report.colorPaletteSuggestions) ? report.colorPaletteSuggestions : [])
+.map((c) => `- ${c.name} (${c.hex}): ${c.usage}`)
+.join("\n")}
 
 ### NEXT-GEN MATERIALS
-${report.materialsList?.map((m) => `- ${m.name} (${m.category}): ${m.description}`).join("\n")}
+${(Array.isArray(report.materialsList) ? report.materialsList : [])
+.map((m) => `- ${m.name} (${m.category}): ${m.description}`)
+.join("\n")}
 
 ### AERODYNAMICS SUGGESTIONS
 ${report.aerodynamicsSuggestions}
