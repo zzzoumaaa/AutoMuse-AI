@@ -1211,7 +1211,6 @@ CRITICAL REQUIREMENT: The user has provided a custom description above. PRIORITI
             systemInstruction,
             temperature: 1.05,
             topP: 0.95,
-            responseMimeType: "application/json",
             responseSchema: {
               type: Type.OBJECT,
               properties: {
