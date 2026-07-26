@@ -66,10 +66,18 @@ Return a detailed automotive concept report.
       },
     });
 
-    res.status(200).json({
-      success: true,
-      data:result.text,
-    });
+    const rawText = result.text;
+
+if (!rawText) {
+  throw new Error("Gemini returned an empty response");
+}
+
+const conceptData = JSON.parse(rawText);
+
+res.status(200).json({
+  success: true,
+  data: conceptData,
+});
 
   } catch (error: any) {
     console.error("Generate concept error:", error);
