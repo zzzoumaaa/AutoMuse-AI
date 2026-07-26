@@ -59,13 +59,14 @@ Return a detailed automotive concept report.
 
     res.status(200).json({
       success: true,
-      concept: result.text,
+      data:JSON.parse(result.text),
     });
 
   } catch (error: any) {
-    console.error(error);
+    console.error("Generate concept error:", error);
 
     res.status(500).json({
+      success: false,
       error: error.message,
     });
   }
