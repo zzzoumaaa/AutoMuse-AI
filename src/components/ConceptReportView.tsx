@@ -472,7 +472,7 @@ ${report.professionalDesignDescription}
             </div>
 
             <div className="space-y-3.5">
-              {{report.designDna || []).map((item, idx) => ( 
+              {(report.designDna || []).map((item, idx) => ( 
                 <div key={idx} className="space-y-1.5">
                   <div className="flex items-center justify-between text-xs font-semibold text-zinc-200">
                     <span>{item.attribute}</span>
@@ -544,7 +544,7 @@ ${report.professionalDesignDescription}
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {{report.materialsList || []).map((mat, idx) => (
+            {(report.materialsList || []).map((mat, idx) => (
               <div
                 key={idx}
                 className="bg-[#121214] p-4 rounded-xl border border-zinc-800/90 hover:border-emerald-800/60 transition-all space-y-2 group"
@@ -655,7 +655,7 @@ ${report.professionalDesignDescription}
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {{report.colorPaletteSuggestions || []).map((color, idx) => (
+            {(report.colorPaletteSuggestions || []).map((color, idx) => (
               <div
                 key={idx}
                 className="bg-[#121214] p-3.5 rounded-xl border border-zinc-800 hover:border-zinc-700 transition-all flex flex-col justify-between space-y-3 group"
