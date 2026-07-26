@@ -14,7 +14,8 @@ app.use(express.json());
 
 // Initialize Gemini AI Client lazily or safely
 function getGeminiClient() {
-  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+  // Use process.env for Node environment. Vite's import.meta.env is not available in TS Node runtime.
+  const apiKey = process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY;
   if (!apiKey) {
     throw new Error("GEMINI_API_KEY environment variable is not configured.");
   }
@@ -661,7 +662,7 @@ function generateStudioFallbackReport(params: {
 
   // If respin is requested in fallback mode, generate a completely procedurally unique concept every time!
   if (isRespin) {
-    const randomAngle = RESPIN_ANGLE_VARIATIONS[Math.floor(Math.random() * RESPIN_ANGLE_VARIATIONS.length)];
+    const randomAngle = RESPIN_VARIATIONS[Math.floor(Math.random() * RESPIN_VARIATIONS.length)];
     const randomArchetype = RESPIN_FALLBACK_ARCHETYPES[seedNum % RESPIN_FALLBACK_ARCHETYPES.length];
 
     return {
@@ -1055,7 +1056,7 @@ app.post("/api/generate-concept", async (req, res) => {
   let countryMarket = isRespin ? getRandomOption(COUNTRY_MARKETS_LIST) : (promptInferred.countryMarket || rawCountryMarket || "Global Metropolises");
 
   // Models to attempt in order of preference (using standard models)
-  const MODELS_TO_TRY = ["gemini-2.5-flash-lite", "gemini-2.5-pro"];
+  const MODELS_TO_TRY = ["gemini-3.6-flash", "gemini-3.6-flash-lite"];
 
   const randomAngle = RESPIN_ANGLE_VARIATIONS[Math.floor(Math.random() * RESPIN_ANGLE_VARIATIONS.length)];
 
