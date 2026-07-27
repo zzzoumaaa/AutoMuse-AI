@@ -163,7 +163,7 @@ The frontend displays the generated vehicle concept in an interactive format.
 🚀 Installation & Setup;
 
 Clone the repository
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone 
 
 Navigate into the project folder
 cd automuse-ai
@@ -263,4 +263,8 @@ Creative technology
 📜 License;
 
 This project is created for educational and portfolio purposes.
+
+Screenshots;
+Are added for Proof.
+
 
