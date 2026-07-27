@@ -173,7 +173,6 @@ npm install
 
 Create environment variables
 Create a .env file:
-GEMINI_API_KEY=your_api_key_here
 Replace the placeholder with your Google Gemini API key.
 
 Run the application locally
@@ -192,7 +191,7 @@ Vercel automatically builds the application.
 The live application is updated.
 Live Demo:
 
-(Add your Vercel URL here)
+https://automuse-7p8ruucqy-zoom9.vercel.app
 
 📂 Project Structure;
 AutoMuse-AI/
