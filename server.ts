@@ -1062,7 +1062,7 @@ app.post("/api/generate-concept", async (req, res) => {
   const randomAngle = RESPIN_ANGLE_VARIATIONS[Math.floor(Math.random() * RESPIN_ANGLE_VARIATIONS.length)];
 
   const systemInstruction = `You are AutoMuse AI, an elite automotive and transport design mentor created for students, concept artists, and car dreamers.
-Your task is to generate an imaginative, authentic, studio-grade concept vehicle project report suitable for a luxury automotive design portfolio presentation.
+Your task is to generate an imaginative, authentic, studio-grade concept vehicle project report suitable for a luxury automotive design portfolio presentation. Every report section must be richly populated with detailed and creative automotive design content. Empty or minimal responses are not acceptable.
 
 *** CREATIVITY DIRECTIVE ***
 Creativity is strictly prioritized over conservative realism!
@@ -1134,7 +1134,7 @@ NEVER reuse generic benchmark vehicles (such as always using 'Lamborghini Revuel
 Output rules:
 1. Provide highly creative, bold, futuristic, and studio-quality responses tailored strictly to the requested vehicle type, style, era, and custom vision description.
 2. VEHICLE NAME: Invent a completely fresh, high-end, futuristic, professional automotive concept name (e.g. combining brand/studio prefix with sophisticated model codenames or aerodynamic project identifiers like 'Porsche Vision Strato-X', 'Aston Martin Codex Horizon-GT', 'Aegis Quantum-I', 'Spectre Zero-GT', 'Solus Hyper-Aero'). DO NOT use generic clichés, plain sentences, or repeat names across generations.
-3. DESIGN PHILOSOPHY: Include a poetic 1-2 sentence philosophy statement (e.g. "Inspired by the elegance of Italian grand tourers and the efficiency of modern aerospace engineering, this vehicle was designed for autonomous coastal travel in 2085.").
+3. DESIGN PHILOSOPHY: Include a poetic 1-2 sentence philosophy statement (e.g. "Inspired by the elegance of Italian grand tourers and the efficiency of modern aerospace engineering, this vehicle was designed for autonomous coastal travel in 2085."),  provide a detailed and imaginative 3-4 sentence design philosophy.
 4. FUN SPECULATIVE STATS: Generate creative, speculative, futuristic stats:
    - Top Speed (e.g., "420 km/h / 260 mph")
    - Range (e.g., "2,200 km / 1,360 mi")
@@ -1143,11 +1143,11 @@ Output rules:
    - Terrain Compatibility (e.g., "Ocean • Urban • Mountain", "Mars Surface • Dune Tracks", "Autobahn • Low-Air Corridors")
    - Autonomy Level (e.g., "Level 6 Fully Autonomous", "Switchable Co-Pilot AI")
    - Year of Production (e.g., "2088")
-5. MATERIALS SECTION: Recommend 4 next-gen, futuristic, or sustainable automotive materials tailored to this exact vehicle.
+5. MATERIALS SECTION: Always recommend exactly 4 next-gen, futuristic, or sustainable automotive materials. Never leave this section empty.
 6. DESIGN DNA: Provide a 3-part percentage mix of design influences summing to 100%.
 7. VEHICLE SIZE COMPARISON: Provide real-world length (e.g., "4.6m"), a custom benchmark comparison tailored to vehicle type, and cabin capacity.
 8. SIGNATURE WOW FACTOR FEATURE: Every concept MUST contain one unique, memorable, futuristic feature that sets it apart (in 'signatureWowFeature' object with 'title', 'category', 'description', and 'impact'). Examples: Retractable transparent wheels, adaptive bio-luminescent paint, shape-shifting aerodynamic surfaces, AI emotional lighting, solar energy harvesting skin, autonomous drone companion, magnetic levitation mode, ocean purification propulsion, living bio-material interiors.
-9. PROCEDURAL ARTISTIC AERODYNAMIC STREAMLINES: Generate 4 to 5 procedurally unique artistic airflow streamline curves ('aeroStreamlines') specifically adapted to this vehicle's category, size, shape, and custom vision.
+9. PROCEDURAL ARTISTIC AERODYNAMIC STREAMLINES: Always Generate EXACTLY 5 procedurally unique artistic airflow streamline curves ('aeroStreamlines') specifically tailored to the vehicle's category, size, shape, and custom vision. This section must never be empty.
    - Hypercar: sharp aggressive sweeping canopy & active wing curves
    - Luxury GT: elegant flowing roofline & underbody channels
    - Flying vehicle / VTOL: circular lift & propulsion airflow swirls
@@ -1158,7 +1158,7 @@ Output rules:
    Each streamline item must have: id, title, category ('laminar', 'downforce', 'cooling', 'underbody', 'wake', 'lift'), path (SVG bezier curve string inside 1000x400 viewBox), hotspot ({x, y} percentage coords 10-90), label, value, detail, glowColor (hex like #10b981, #06b6d4, #38bdf8, #f59e0b, #a855f7).
 10. Return strict JSON matching the provided schema.`;
 
-  let prompt = "";
+ let prompt = "";
   if (isRespin) {
     prompt = `*** RESPIN DIRECTIVE: COMPLETE NEW DESIGN SESSION ***
 FORGET ALL PREVIOUS CONCEPTS AND SPECIFICATIONS ENTIRELY.
@@ -1383,7 +1383,10 @@ CRITICAL REQUIREMENT: The user has provided a custom description above. PRIORITI
               ],
             },
           },
-        });
+        }); 
+
+        console.log("RAW GEMINI RESPONSE"); 
+        console.log(response.text);
 
         const jsonText = response.text || "{}";
         generatedData = JSON.parse(jsonText);
@@ -1494,6 +1497,9 @@ CRITICAL REQUIREMENT: The user has provided a custom description above. PRIORITI
       );
     }
   }
+
+console.log("FINAL GENERATED DATA:");
+console.log(JSON.stringify(generatedData, null, 2));
 
   res.json({
     success: true,
