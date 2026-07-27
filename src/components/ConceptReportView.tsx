@@ -187,17 +187,6 @@ ${(Array.isArray(report.materialsList) ? report.materialsList : []).map((m) => `
               <span className="text-sm font-bold font-mono text-emerald-400">{report.keySpecs.dragCoefficient}</span>
               <div className="bg-[#121214] p-3.5 rounded-xl border border-zinc-800/80">
               <span className="text-[10px] uppercase font-mono text-zinc-500 block">
-               0-60 MPH
-              </span>
-              <span className="text-sm font-bold font-mono text-zinc-100">
-                {report.keySpecs.zeroToSixty}
-             </span>
-            </div>
-
-            <div className="bg-[#121214] p-3.5 rounded-xl border border-zinc-800/80">
-              <span className="text-[10px] uppercase font-mono text-zinc-500 block"></span>
-              </div>
-
             </div>
           </div>
         </div>
@@ -270,6 +259,7 @@ ${(Array.isArray(report.materialsList) ? report.materialsList : []).map((m) => `
          <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono">
          Aerodynamics Explanation
         </h3>
+
 
         <p className="text-sm text-zinc-300 leading-relaxed">
           {report.aerodynamicsSuggestions}
