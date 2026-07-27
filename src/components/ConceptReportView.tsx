@@ -98,7 +98,8 @@ ${(Array.isArray(report.materialsList) ? report.materialsList : []).map((m) => `
   };
 
   return (
-    <div className="space-y-8 animate-fade-in">
+   <div className="space-y-8 animate-fade-in">
+      
       {/* 1. Header Banner */}
       <div className="bg-[#18181a] border border-zinc-800 rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-2xl">
         <div className="flex flex-col items-center justify-center text-center gap-5 relative z-10 max-w-4xl mx-auto">
@@ -112,7 +113,7 @@ ${(Array.isArray(report.materialsList) ? report.materialsList : []).map((m) => `
               </span>
             </div>
 
-            <h1 className="text-2xl sm:text-4xl font-extrabold text-zinc-100 tracking-tight font-serif uppercase mt-1 text-center">
+            <h1 className="text-2xl sm:text-4xl font-extrabold text-zinc-100 tracking-tight font-serif uppercase mt-1 text-center break-words max-w-4xl">
               {report.vehicleName}
             </h1>
             <p className="text-zinc-400 text-xs sm:text-sm mt-2 max-w-2xl text-center font-light leading-relaxed">
@@ -184,6 +185,19 @@ ${(Array.isArray(report.materialsList) ? report.materialsList : []).map((m) => `
             <div className="bg-[#121214] p-3.5 rounded-xl border border-zinc-800/80">
               <span className="text-[10px] uppercase font-mono text-zinc-500 block">Drag Coeff</span>
               <span className="text-sm font-bold font-mono text-emerald-400">{report.keySpecs.dragCoefficient}</span>
+              <div className="bg-[#121214] p-3.5 rounded-xl border border-zinc-800/80">
+              <span className="text-[10px] uppercase font-mono text-zinc-500 block">
+               0-60 MPH
+              </span>
+              <span className="text-sm font-bold font-mono text-zinc-100">
+                {report.keySpecs.zeroToSixty}
+             </span>
+            </div>
+
+            <div className="bg-[#121214] p-3.5 rounded-xl border border-zinc-800/80">
+              <span className="text-[10px] uppercase font-mono text-zinc-500 block"></span>
+              </div>
+
             </div>
           </div>
         </div>
@@ -251,6 +265,18 @@ ${(Array.isArray(report.materialsList) ? report.materialsList : []).map((m) => `
         />
       </div>
 
+       {report.aerodynamicsSuggestions && (
+        <div className="bg-[#18181a] border border-zinc-800 rounded-2xl p-6 shadow-xl space-y-3 mt-6">
+         <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono">
+         Aerodynamics Explanation
+        </h3>
+
+        <p className="text-sm text-zinc-300 leading-relaxed">
+          {report.aerodynamicsSuggestions}
+        </p>
+      </div>
+      )}
+
       {/* 5. Next-Gen Materials */}
       {Array.isArray(report.materialsList) && report.materialsList.length > 0 && (
         <div className="bg-[#18181a] border border-zinc-800 rounded-2xl p-6 shadow-xl space-y-4">
@@ -272,6 +298,114 @@ ${(Array.isArray(report.materialsList) ? report.materialsList : []).map((m) => `
           </div>
         </div>
       )}
+
+      {/* 6. Professional Design Description */}
+{report.professionalDesignDescription && (
+  <div className="bg-[#18181a] border border-zinc-800 rounded-2xl p-6 shadow-xl space-y-4">
+    <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono">
+      Professional Design Description
+    </h3>
+
+    <p className="text-sm text-zinc-300 leading-relaxed">
+      {report.professionalDesignDescription}
+    </p>
+  </div>
+)}
+
+{/* 6. AI Design Insights */}
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+  {report.vehicleConceptSummary && (
+    <div className="bg-[#18181a] border border-zinc-800 rounded-2xl p-6 shadow-xl space-y-3">
+      <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono">
+        Concept Summary
+      </h3>
+      <p className="text-sm text-zinc-300 leading-relaxed">
+        {report.vehicleConceptSummary}
+      </p>
+    </div>
+  )}
+
+  {report.professionalDesignDescription && (
+    <div className="bg-[#18181a] border border-zinc-800 rounded-2xl p-6 shadow-xl space-y-3">
+      <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono">
+        Professional Design Description
+      </h3>
+      <p className="text-sm text-zinc-300 leading-relaxed">
+        {report.professionalDesignDescription}
+      </p>
+    </div>
+  )}
+
+  {report.exteriorStylingSuggestions && (
+    <div className="bg-[#18181a] border border-zinc-800 rounded-2xl p-6 shadow-xl space-y-3">
+      <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono">
+        Exterior Styling
+      </h3>
+      <p className="text-sm text-zinc-300 leading-relaxed">
+        {report.exteriorStylingSuggestions}
+      </p>
+    </div>
+  )}
+
+  {report.interiorStylingSuggestions && (
+    <div className="bg-[#18181a] border border-zinc-800 rounded-2xl p-6 shadow-xl space-y-3">
+      <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono">
+        Interior Styling
+      </h3>
+      <p className="text-sm text-zinc-300 leading-relaxed">
+        {report.interiorStylingSuggestions}
+      </p>
+    </div>
+  )}
+
+  {report.materialsRecommendations && (
+    <div className="bg-[#18181a] border border-zinc-800 rounded-2xl p-6 shadow-xl space-y-3">
+      <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono">
+        Materials Recommendations
+      </h3>
+      <p className="text-sm text-zinc-300 leading-relaxed">
+        {report.materialsRecommendations}
+      </p>
+    </div>
+  )}
+
+  {report.aerodynamicsSuggestions && (
+    <div className="bg-[#18181a] border border-zinc-800 rounded-2xl p-6 shadow-xl space-y-3">
+      <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono">
+        Aerodynamics Suggestions
+      </h3>
+      <p className="text-sm text-zinc-300 leading-relaxed">
+        {report.aerodynamicsSuggestions}
+      </p>
+    </div>
+  )}
+
+  {report.vehicleStructureRecommendations && (
+    <div className="bg-[#18181a] border border-zinc-800 rounded-2xl p-6 shadow-xl space-y-3">
+      <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono">
+        Vehicle Structure
+      </h3>
+      <p className="text-sm text-zinc-300 leading-relaxed">
+        {report.vehicleStructureRecommendations}
+      </p>
+    </div>
+  )}
+
+  {report.sustainabilityRecommendations && (
+    <div className="bg-[#18181a] border border-zinc-800 rounded-2xl p-6 shadow-xl space-y-3">
+      <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono">
+        Sustainability
+      </h3>
+      <p className="text-sm text-zinc-300 leading-relaxed">
+        {report.sustainabilityRecommendations}
+      </p>
+    </div>
+  )}
+
+</div>
+
 
       {/* 6. Color Palette Swatches */}
       <div className="bg-[#18181a] border border-zinc-800 rounded-xl p-6 shadow-xl space-y-4">

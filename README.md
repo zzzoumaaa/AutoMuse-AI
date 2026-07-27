@@ -196,18 +196,26 @@ Live Demo:
 
 📂 Project Structure;
 AutoMuse-AI/
-│
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── lib/
-│   └── assets/
-│
-├── server.ts
-├── package.json
-├── vite.config.ts
-├── .env.example
-└── README.md
+ api/                     # API routes and backend-related files
+ assets/                  # Images and design assets
+
+ src/                     # Main frontend source code
+  ├── components/         # Reusable UI components
+  ├── data/               # Static data and presets
+  ├── lib/                # AI logic and helper functions
+  ├── App.tsx             # Main application component
+  ├── main.tsx            # Application entry point
+  └── types.ts            # TypeScript definitions
+
+ server.ts                # Backend server and AI generation handling
+ index.html               # Main HTML entry file
+ package.json             # Dependencies and project scripts
+ vite.config.ts           # Vite configuration
+ tsconfig.json            # TypeScript configuration
+ .env.example             # Environment variable template
+ .gitignore               # Git ignored files
+ README.md                # Project documentation
+ vite.config.ts
 
 🧠 AI Development Notes;
 
